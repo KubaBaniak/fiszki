@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+    .inactive{
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+    }
+    .app{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      height:80%;
+      min-height: 600px;
+      min-width:300px;
+      display: flex;
+      flex-direction: column;
+      flex-grow:1;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: rgba(153, 152, 138, 0.521);
+      border-radius:20px;
+      overflow:hidden;
+    }
+    .hintselector{
+      text-align: center;
+    }
+    button{
+      width:210px;
+      height:70px;
+      border:none;
+      font-size: 1.5em;
+      border-radius:20px;
+      transition: .3s;
+    }
+    button:hover{
+      transform-origin: center;
+      transform: scale(1.1);
+      font-size: 1.6em;
+    }
+    .hint {
+      position:relative;
+      top:0%;
+      left:0%;
+      font-size: 1.2em;
+      transition: .3s;
+      overflow: auto;
+      max-height: 200px;
+      margin: 0 20px 0 20px;
+    }
+    .zpxd{
+      position:fixed;
+      background-color:black;
+      color:white;
+      font-size: 2em;
+      bottom:0;
+      right:0;
+      border-top-left-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class = 'app'>
+    <h1>Pytanie</h1>
+    <button onclick="window.location.href='#'">Następne pytanie</button>
+    <div class = "hintselector">
+      <button class = 'hintbtn'>Show hint</button>
+        <div class="hint inactive">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quasi labore minima molestiae iusto odio id? Reprehenderit consectetur incidunt quae modi magni eius minima, facilis, nisi enim eligendi possimus suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quasi labore minima molestiae iusto odio id? Reprehenderit consectetur incidunt quae modi magni eius minima, facilis, nisi enim eligendi possimus suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quasi labore minima molestiae iusto odio id? Reprehenderit consectetur incidunt quae modi magni eius minima, facilis, nisi enim eligendi possimus suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </div>
+    </div>
+  </div>
+  <p class = 'zpxd'>ZPXD</p>
+</body>
+
+<script>
+  const btn = document.querySelector('.hintbtn')
+  
+  document.querySelector('.hintbtn').addEventListener('click', ()=>{
+    document.querySelector('.hint').classList.toggle('inactive')
+    btn.innerHTML = document.querySelector('.hint').classList.contains('inactive')? btn.innerHTML ="Show hint" : btn.innerHTML ="Hide hint"
+    
+  })
+</script>
+
+</html>
